@@ -10,6 +10,10 @@ class Voicedata
 
     protected $config;
 
+    /**
+     * 
+     * @param array $config
+     */
     public function setConfig($config)
     {
         $this->config = $config;
@@ -26,6 +30,13 @@ class Voicedata
         }
     }
 
+    /**
+     * Generate XML for given config and params
+     * 
+     * @param integer $extension
+     * @param string $destination
+     * @return mixed xml string
+     */
     public function generateXml($extension, $destination)
     {
         $destination = str_replace('-', '', $destination);
@@ -55,10 +66,10 @@ class Voicedata
                 'body' => $xml
             ])
                 ->xml();
-            return 
-                $response && 
-                $response->messageheader && 
-                $response->messageheader->msgtype && 
+            return
+                $response &&
+                $response->messageheader &&
+                $response->messageheader->msgtype &&
                 $response->messageheader->msgtype == 'ack';
         } catch (GuzzleHttp\Exception\ClientException $e) {
             return false;

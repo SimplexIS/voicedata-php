@@ -21,7 +21,7 @@ class VoicedataPhpServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['voicedata'] = $this->app->share(function ($app){
+        $this->app['voicedata'] = $this->app->share(function ($app) {
             $vd = new Voicedata();
             $vd->setConfig($app['config']);
             return $vd;

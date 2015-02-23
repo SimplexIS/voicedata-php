@@ -14,6 +14,10 @@ class BaseTest extends PHPUnit_Framework_TestCase
         Mockery::close();
     }
 
+    /**
+     * Ensure that the call function is never called on
+     * invalid input
+     */
     public function testCallExtensionNull()
     {
         $this->mock->shouldReceive('generateXml')->never();
