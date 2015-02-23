@@ -1,4 +1,5 @@
 build_settings:
+    verbose: true
     ignore:
         - "vendor"
 
@@ -8,9 +9,10 @@ setup:
 
 test:
     php_unit:
-        config:
-            - "phpunit.xml"
     php_mess_detector:
         allow_failures: true
     php_code_sniffer:
         standard: "PSR2"
+    php_lint:
+    php_loc:
+    php_docblock_checker:

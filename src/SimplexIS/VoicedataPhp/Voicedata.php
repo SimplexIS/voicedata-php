@@ -55,7 +55,11 @@ class Voicedata
                 'body' => $xml
             ])
                 ->xml();
-            return $response && $response->messageheader && $response->messageheader->msgtype && $response->messageheader->msgtype == 'ack';
+            return 
+                $response && 
+                $response->messageheader && 
+                $response->messageheader->msgtype && 
+                $response->messageheader->msgtype == 'ack';
         } catch (GuzzleHttp\Exception\ClientException $e) {
             return false;
         } catch (GuzzleHttp\Exception\RequestException $e) {
