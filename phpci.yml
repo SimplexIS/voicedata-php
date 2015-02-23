@@ -7,7 +7,7 @@ setup:
         action: "install"
 
 test:
-	php_unit
+    php_unit
     php_mess_detector:
         allow_failures: true
     php_code_sniffer:
